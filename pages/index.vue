@@ -18,21 +18,21 @@ const todo = async (): Promise<TodoItem[]> => {
 <template>
   <ul class="list-disc pl-16 pt-4 max-w-fit">
     <ClientOnly>
-    <transition-group name="list">
-      <!-- fyi delay-${index} didn't work, maybe some hack I don't know yet is better :) -->
-      <li
-        v-for="item, index in todoItems"
-        :key="item.id"
-        :style="`{;transition-delay: ${index*20}ms;}`"
-      >
-        <nuxt-link :to="`/todo/${item.id}`">
-          <span class="text-lg text-slate-500 hover:text-slate-400 w-fit transition ease-in-out">
-            {{ item.title }}
-          </span>
-        </nuxt-link>
-      </li>
-    </transition-group>
-</ClientOnly>
+      <transition-group name="list">
+        <!-- fyi delay-${index} didn't work, maybe some hack I don't know yet is better :) -->
+        <li
+          v-for="item, index in todoItems"
+          :key="item.id"
+          :style="`{;transition-delay: ${index*20}ms;}`"
+        >
+          <nuxt-link :to="`/todo/${item.id}`">
+            <span class="text-lg text-slate-500 hover:text-slate-400 w-fit transition ease-in-out">
+              {{ item.title }}
+            </span>
+          </nuxt-link>
+        </li>
+      </transition-group>
+    </ClientOnly>
   </ul>
 </template>
 
