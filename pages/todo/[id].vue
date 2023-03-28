@@ -17,14 +17,14 @@ const todo = async (index: number | string): Promise<TodoItem> => {
 </script>
 
 <template>
-  <main class="flex h-full place-items-center">
+  <main class="flex h-screen w-screen items-center justify-center">
     <transition
       name="slide"
       appear
     >
       <div
         v-show="!!todoItem"
-        class="m-auto text-slate-700"
+        class="text-slate-700 max-w-fit max-h-fit"
       >
         <h1 class="text-3xl font-bold">
           {{ todoItem?.title }}

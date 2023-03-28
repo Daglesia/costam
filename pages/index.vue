@@ -16,7 +16,8 @@ const todo = async (): Promise<TodoItem[]> => {
 
 
 <template>
-  <ul class="list-disc pl-16 pt-4">
+  <ul class="list-disc pl-16 pt-4 max-w-fit">
+    <ClientOnly>
     <transition-group name="list">
       <!-- fyi delay-${index} didn't work, maybe some hack I don't know yet is better :) -->
       <li
@@ -31,6 +32,7 @@ const todo = async (): Promise<TodoItem[]> => {
         </nuxt-link>
       </li>
     </transition-group>
+</ClientOnly>
   </ul>
 </template>
 
